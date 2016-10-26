@@ -1,8 +1,10 @@
 How to access the Web application?
 -------------------------------------------------------------------------------
 
-URL: http://localhost:8080/Maven-JSF
+URL: http://localhost:8080/JSF-Simple
 
+
+TODO: Use Logger
 	
 	
 Anatomy of a simple JSF Web application

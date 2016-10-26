@@ -1,7 +1,7 @@
 How to access the Web application?
 -------------------------------------------------------------------------------
 
-Browser: http://localhost:8080/Maven-JSF-CDI
+Browser: http://localhost:8080/JSF-CDI
 
 
 How to use CDI for managed beans?

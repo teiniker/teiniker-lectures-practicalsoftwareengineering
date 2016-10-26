@@ -8,6 +8,8 @@
 	<packaging>war</packaging>
 
 	<build>
+		<finalName>${project.artifactId}</finalName>
+
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -24,9 +26,38 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
-		</plugins>
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>1.0.2.Final</version>
+				<configuration>
+					<jbossHome>/home/student/install/wildfly-10.0.0.Final</jbossHome>
+					<port>9990</port>
+					<server-config>standalone.xml</server-config>
+				</configuration>
+				<executions>
+					<!-- Run wildfly and deploy application for integration tests. -->
+					<execution>
+						<id>wildfly-run</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>start</goal>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+					<!-- Integration test teardown. -->
+					<execution>
+						<id>wildfly-shutdown</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>undeploy</goal>
+							<goal>shutdown</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
-		<finalName>maven-jsf-simple</finalName>
+		</plugins>
 	</build>
 
 	<dependencies>
@@ -41,7 +72,7 @@
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<version>5.2</version>
+			<version>6.0</version>
 		</dependency>
 
 		<!-- JSF 2 API -->
@@ -51,13 +82,5 @@
 			<version>2.2.0-m07</version>
 		</dependency>
 	</dependencies>
-
-	<repositories>
-		<repository>
-			<id>primefaces-repository</id>
-			<name>Primefaces repository</name>
-			<url>http://repository.primefaces.org</url>
-		</repository>
-	</repositories>
 
 </project>
