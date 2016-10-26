@@ -1,0 +1,5 @@
+# JBoss settings
+
+jboss.home=/home/student/install/wildfly-8.2.0.Final
+jboss.console.port=9990
+jboss.config=standalone.xml
