@@ -1,6 +1,7 @@
 How to run Findbugs?
 -------------------------------------------------------------------------------
 
+$ mvn compile 
 $ mvn site
 
 => target/site/findbugs.html
