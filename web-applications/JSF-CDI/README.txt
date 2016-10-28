@@ -1,7 +1,13 @@
+How to run the Web application on the command line?
+-------------------------------------------------------------------------------
+
+$ mvn wildfly:run
+
+
 How to access the Web application?
 -------------------------------------------------------------------------------
 
-Browser: http://localhost:8080/JSF-CDI
+URL: http://localhost:8080/JSF-CDI
 
 
 How to use CDI for managed beans?
