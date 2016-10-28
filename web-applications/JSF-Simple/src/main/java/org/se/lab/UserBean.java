@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import org.apache.log4j.Logger;
+
 @ManagedBean // or @Named in the context of JEE 
 @SessionScoped
 public class UserBean
@@ -12,12 +14,14 @@ public class UserBean
 {
 	private static final long serialVersionUID = 1L;
 	
+	private final Logger LOG = Logger.getLogger(UserBean.class);
+	
 	/*
 	 * Constructor
 	 */
 	public UserBean()
 	{
-		System.out.println("UserBean()");
+		LOG.debug("Create: " + UserBean.class.getSimpleName());
 	}
 	
 	
@@ -27,12 +31,12 @@ public class UserBean
 	private String name;
 	public String getName()
 	{
-		System.out.println("getName():" + name);
+		LOG.debug("getName():" + name);
 		return name;
 	}
 	public void setName(String name)
 	{
-		System.out.println("setName(" + name + ")");
+		LOG.debug("setName(" + name + ")");
 		this.name = name;
 	}
 	
@@ -43,12 +47,12 @@ public class UserBean
 	private String password;
 	public String getPassword()
 	{
-		System.out.println("getPassword():" + password);
+		LOG.debug("getPassword():" + password);
 		return password;
 	}
 	public void setPassword(String password)
 	{
-		System.out.println("setPassword(" + password + ")");
+		LOG.debug("setPassword(" + password + ")");
 		this.password = password;
 	}
 }

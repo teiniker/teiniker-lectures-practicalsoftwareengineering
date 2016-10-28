@@ -1,10 +1,13 @@
+How to run the Web application on the command line?
+-------------------------------------------------------------------------------
+
+$ mvn wildfly:run
+
+
 How to access the Web application?
 -------------------------------------------------------------------------------
 
 URL: http://localhost:8080/JSF-Simple
-
-
-TODO: Use Logger
 	
 	
 Anatomy of a simple JSF Web application
@@ -81,6 +84,9 @@ Example:
 	
 How to build a JSF Web application using maven?
 -------------------------------------------------------------------------------
+
+$ cd JSF-Simple
+$ mvn wildfly:run
 
 1. Make sure that we build a WAR file
 	<packaging>war</packaging>
