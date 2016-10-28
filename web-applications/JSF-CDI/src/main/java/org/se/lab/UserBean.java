@@ -6,6 +6,8 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
+import org.apache.log4j.Logger;
+
 @Named  
 @SessionScoped
 public class UserBean
@@ -13,18 +15,20 @@ public class UserBean
 {
 	private static final long serialVersionUID = 1L;
 	
+	private final Logger LOG = Logger.getLogger(UserBean.class);
+	
 	/*
 	 * Constructor
 	 */
 	public UserBean()
 	{
-		System.out.println("UserBean()");
+		LOG.debug("Create: " + UserBean.class.getSimpleName());
 	}
 	
 	@PostConstruct
 	public void init()
 	{
-		System.out.println("init()");
+		LOG.debug("init()");
 	}
 	
 	
@@ -34,12 +38,12 @@ public class UserBean
 	private String name;
 	public String getName()
 	{
-		System.out.println("getName():" + name);
+		LOG.debug("getName():" + name);
 		return name;
 	}
 	public void setName(String name)
 	{
-		System.out.println("setName(" + name + ")");
+		LOG.debug("setName(" + name + ")");
 		this.name = name;
 	}
 	
@@ -50,12 +54,12 @@ public class UserBean
 	private String password;
 	public String getPassword()
 	{
-		System.out.println("getPassword():" + password);
+		LOG.debug("getPassword():" + password);
 		return password;
 	}
 	public void setPassword(String password)
 	{
-		System.out.println("setPassword(" + password + ")");
+		LOG.debug("setPassword(" + password + ")");
 		this.password = password;
 	}
 	
@@ -66,6 +70,7 @@ public class UserBean
 	
 	public String login()
 	{
+		LOG.debug("login()");
 		if(getName().equals("teini"))
 		{
 			return "welcome";			
