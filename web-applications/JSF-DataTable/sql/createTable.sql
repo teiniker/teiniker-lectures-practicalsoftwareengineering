@@ -1,11 +1,18 @@
-
 CREATE TABLE article 
 (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	description VARCHAR(255) NOT NULL,
-	price INT
-) ENGINE = INNODB;
+    ID integer not null,
+    DESCRIPTION varchar(255),
+    PRICE bigint,
+    primary key (ID)
+) ENGINE=InnoDB;
 
-INSERT INTO article (description, price) VALUES ('Design Patterns', 4295);
-INSERT INTO article (description, price) VALUES ('Effective Java (2nd Edition)', 3336);
+CREATE TABLE hibernate_sequence 
+(
+   next_val bigint
+) ENGINE=InnoDB;
+
+INSERT INTO hibernate_sequence values (100);
+
+INSERT INTO article (id, description, price) VALUES (1, 'Design Patterns', 4295);
+INSERT INTO article (id, description, price) VALUES (2, 'Effective Java (2nd Edition)', 3336);
 	
