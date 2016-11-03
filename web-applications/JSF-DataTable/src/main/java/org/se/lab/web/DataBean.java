@@ -38,20 +38,6 @@ public class DataBean implements Serializable
 
 
 	/*
-	 * Property: text
-	 */
-	private String text;
-	public String getText()
-	{
-		return text;
-	}
-	public void setText(String text)
-	{
-		this.text = text;
-	}
-
-	
-	/*
 	 * Actions
 	 */
 	

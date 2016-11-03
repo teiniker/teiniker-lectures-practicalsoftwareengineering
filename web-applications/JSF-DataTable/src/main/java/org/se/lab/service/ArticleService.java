@@ -32,7 +32,7 @@ public class ArticleService
 		catch(Exception e)
 		{
 			LOG.error("Can't insert article " + article, e);
-			throw new ServiceException("Can't insert article " + article, e);
+			throw new ServiceException("Can't insert article " + article);
 		}
 	}
 	
@@ -65,7 +65,7 @@ public class ArticleService
 		catch(Exception e)
 		{
 			LOG.error("Can't find all articles!", e);
-			throw new ServiceException("Can't find all articles!", e);
+			throw new ServiceException("Can't find all articles!");
 		}
 	}
 	
@@ -82,7 +82,7 @@ public class ArticleService
 		catch(Exception e)
 		{
 			LOG.error("Can't find article with id " + id, e);
-			throw new ServiceException("Can't find article with id " + id, e);
+			throw new ServiceException("Can't find article with id " + id);
 		}
 	}
 }
