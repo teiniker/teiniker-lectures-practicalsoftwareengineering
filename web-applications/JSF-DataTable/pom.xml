@@ -25,12 +25,6 @@
 
 		<plugins>
 			<plugin>
-				<groupId>org.wildfly.plugins</groupId>
-				<artifactId>wildfly-maven-plugin</artifactId>
-				<version>${version.wildfly.maven.plugin}</version>
-			</plugin>
-
-			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${version.compiler.plugin}</version>
 				<configuration>
@@ -41,7 +35,7 @@
 			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
-				<version>1.0.2.Final</version>
+				<version>${version.wildfly.maven.plugin}</version>
 				<configuration>
 					<jbossHome>/home/student/install/wildfly-10.1.0.Final</jbossHome>
 					<port>9990</port>

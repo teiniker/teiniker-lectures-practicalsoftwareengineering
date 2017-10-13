@@ -23,7 +23,7 @@ public class ArticleService
 
 	public void insert(Article article)
 	{
-		LOG.info("insert: " + article);
+		LOG.debug("insert: " + article);
 
 		try
 		{
@@ -39,7 +39,7 @@ public class ArticleService
 	
 	public void update(Article article)
 	{
-		LOG.info("update to " + article);
+		LOG.debug("update to " + article);
 
 		// TODO
 	}
@@ -55,7 +55,7 @@ public class ArticleService
 	
 	public List<Article> findAll()
 	{
-		LOG.info("find all articles");
+		LOG.debug("find all articles");
 
 		try
 		{
@@ -72,7 +72,7 @@ public class ArticleService
 	
 	public Article findById(int id) 
 	{
-		LOG.info("find User with id=" + id);
+		LOG.debug("find User with id=" + id);
 
 		try
 		{
