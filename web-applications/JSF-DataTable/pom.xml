@@ -43,7 +43,7 @@
 				<artifactId>wildfly-maven-plugin</artifactId>
 				<version>1.0.2.Final</version>
 				<configuration>
-					<jbossHome>/home/student/install/wildfly-10.0.0.Final</jbossHome>
+					<jbossHome>/home/student/install/wildfly-10.1.0.Final</jbossHome>
 					<port>9990</port>
 					<server-config>standalone.xml</server-config>
 				</configuration>
@@ -92,7 +92,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		
