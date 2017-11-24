@@ -1,0 +1,7 @@
+/target/
+/.settings/
+/.classpath
+/.project
+/jdbc.properties
+/Java-Generics-DAO.iml
+
