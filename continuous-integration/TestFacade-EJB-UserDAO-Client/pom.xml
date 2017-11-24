@@ -48,7 +48,7 @@
 		<!-- We depend on the EJB remote business interfaces of this application -->
 		<dependency>
 			<groupId>org.se.lab</groupId>
-			<artifactId>EJB-Calculator-RemoteTest</artifactId>
+			<artifactId>TestFacade-EJB-UserDAO</artifactId>
 			<type>ejb</type>
 			<version>${project.version}</version>
 		</dependency>

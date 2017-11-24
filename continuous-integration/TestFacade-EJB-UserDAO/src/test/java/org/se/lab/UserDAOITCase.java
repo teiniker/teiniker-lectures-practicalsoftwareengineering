@@ -1,19 +1,18 @@
 package org.se.lab;
 
-import java.util.Hashtable;
-
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class UserDAOTest
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import java.util.Hashtable;
+
+public class UserDAOITCase
 {    
-	private final Logger LOG = Logger.getLogger(UserDAOTest.class);
+	private final Logger LOG = Logger.getLogger(UserDAOITCase.class);
 	
 	private UserDAO dao;
 	// The JNDI lookup name for a stateless session bean has the syntax of:

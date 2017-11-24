@@ -3,3 +3,5 @@
 /.classpath
 /.project
 /ClassDiagram.ucls
+/TestFacade-EJB-UserDAO.iml
+/jboss.properties
