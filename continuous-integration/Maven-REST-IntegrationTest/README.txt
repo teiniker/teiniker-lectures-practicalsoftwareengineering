@@ -1,3 +1,12 @@
+How to Make the Test Run?
+-------------------------------------------------------------------------------
+1) Rename and configure the jboss.properties.template file to jboss.properties
+
+2) Rename and configure to server.properties.template file to server.properties
+
+3) mvn verify
+
+
 How to Configure Maven for Wildfly Deployment?
 -------------------------------------------------------------------------------
 
@@ -13,7 +22,7 @@ How to Configure Maven for Wildfly Deployment?
                     <!--
                     -->
 				<configuration>
-                    <jbossHome>C:/install/wildfly-8.1.0.Final</jbossHome>
+                    <jbossHome>/home/student/install/wildfly-10.1.0.Final</jbossHome>
                     <port>10090</port>
                   	<!--
                     <username>USERNAME</username>
