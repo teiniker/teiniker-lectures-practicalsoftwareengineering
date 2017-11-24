@@ -1,0 +1,17 @@
+##
+# FindBugs configuration
+#
+##
+
+findbugs.home=vendor/findbugs-3.0.1
+
+findbugs.src = src
+findbugs.test = test
+findbugs.build = build
+
+findbugs.output.format = text
+findbugs.output.file = reports/findbugs-report.txt
+#findbugs.output.format = xml
+#findbugs.output.file = reports/findbugs-report.xml
+#findbugs.output.format = html
+#findbugs.output.file = reports/findbugs-report.html
