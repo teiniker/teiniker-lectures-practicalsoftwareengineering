@@ -120,6 +120,16 @@
 		</plugins>
 	</build>
 
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>3.0.5</version>
+            </plugin>
+        </plugins>
+    </reporting>
+
 	<dependencyManagement>
 		<dependencies>
 			<!-- Define the version of JBoss' Java EE 7 APIs we want to import. Any 
