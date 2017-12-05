@@ -1,4 +1,4 @@
-package org.se.lab;
+package org.se.lab.integration;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;

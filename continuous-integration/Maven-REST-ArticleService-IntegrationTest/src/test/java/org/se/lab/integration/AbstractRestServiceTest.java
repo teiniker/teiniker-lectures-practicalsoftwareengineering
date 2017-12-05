@@ -1,4 +1,4 @@
-package org.se.lab;
+package org.se.lab.integration;
 
 import java.io.BufferedReader;
 import java.io.IOException;

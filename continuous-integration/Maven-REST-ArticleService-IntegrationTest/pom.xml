@@ -53,8 +53,8 @@
             	<artifactId>maven-surefire-plugin</artifactId>
                 <version>${version.surefire.plugin}</version>
                 <configuration>
-                	<skipTests>true</skipTests>
-                    <testFailureIgnore>true</testFailureIgnore>
+                	<skipTests>false</skipTests>
+                    <testFailureIgnore>false</testFailureIgnore>
  				</configuration>
  			</plugin>
  			
