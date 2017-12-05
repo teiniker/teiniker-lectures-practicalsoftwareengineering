@@ -50,7 +50,7 @@ public class Article implements Serializable
 	}
 	public void setDescription(String description)
 	{
-		if(description == null)
+		if(description == null || description == "")	// known bug to test findbugs
 			throw new IllegalArgumentException("Invalid parameter description!");
 		this.description = description;
 	}
