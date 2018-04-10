@@ -7,7 +7,7 @@ In order to run the implemented Selenium test cases execute the following tasks:
 1. Start Web application
 ------------------------
 For testing purposes, we use a simple Web application called "Servlet-SimpleLogin"
-which can be foud in the web-applications folder.
+which can be found in the web-applications folder.
 
 $ cd web-applications/Servlet-SimpleLogin
 $ mvn wildfly:run
