@@ -11,6 +11,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+
+/**
+ * These test cases are used to explain the concept of integration-tests.
+ */
 public class ArticlesITCase 
 	extends AbstractRestServiceTest
 {
@@ -29,7 +33,12 @@ public class ArticlesITCase
 		JDBC_HELPER.executeSqlScript("src/test/resources/sql/dropTable.sql");		
 	}
 
-	
+    /**
+     * Test a GET request to retrieve all articles from the resource in XML format.
+     *
+     * @throws IOException
+     * @throws JAXBException
+     */
 	@Test
 	public void testFindAll_XML() throws IOException, JAXBException
 	{
@@ -58,6 +67,12 @@ public class ArticlesITCase
 		Assert.assertEquals(EXPECTED, content);
 	}
 
+    /**
+     * Test a GET request to retrieve an article with id = 1 from the resource in XML format.
+     *
+     * @throws IOException
+     * @throws JAXBException
+     */
 	@Test
 	public void testFindById_XML() throws IOException, JAXBException
 	{

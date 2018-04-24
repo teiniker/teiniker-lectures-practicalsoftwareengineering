@@ -12,3 +12,8 @@ How to implement integration tests for services?
 How to run the integration test from the command line?
 -------------------------------------------------------------------------------
 $ mvn verify 
+
+
+How to generate Test JavaDocs?
+-------------------------------------------------------------------------------
+$ mvn javadoc:test-javadoc
