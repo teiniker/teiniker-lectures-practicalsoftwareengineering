@@ -49,7 +49,7 @@ public class FirefoxTest
     }
 
     @Test
-    public void testLoginSuccess() throws Exception
+    public void testLoginSuccess()
     {
         page = new LoginPage(driver, "http://localhost:8080", 30);
 
