@@ -14,7 +14,7 @@ You can find examples for the following topics:
   * Security Examples (HTTPS, Password Encryption, Authentication)
   
 See also: 
-[Software Architectures by Examples](https://github.com/teiniker/teiniker-lectures-practicalsoftwareengineering) and 
+[Software Architectures by Examples](https://github.com/teiniker/teiniker-lectures-softwarearchitectures) and 
 [Software Quality by Examples](https://github.com/teiniker/teiniker-lectures-softwarequality)
 
 As a development environment, you can use a pre-configured Linux VM image:
