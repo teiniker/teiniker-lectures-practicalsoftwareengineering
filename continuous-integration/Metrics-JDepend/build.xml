@@ -1,4 +1,4 @@
-<project name="JavaNCSS-Example" default="all">
+<project name="Metrics-JDepend" default="all">
 
 	<!--
 		Global settings
