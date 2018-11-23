@@ -11,7 +11,7 @@ Authentication and Authorization Service (JAAS) login modules ans subjects.
 How to Generate ApplicationRealm Credentials for Wildfly AS?
 -------------------------------------------------------------------------------
 
-$ cd /home/student/install/wildfly-9.0.1.Final/
+$ cd /home/student/install/wildfly-x.y.z.Final/
 
 $ bin/add-user.sh 
 What type of user do you wish to add? 
