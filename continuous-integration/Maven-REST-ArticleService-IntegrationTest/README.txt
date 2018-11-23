@@ -8,6 +8,10 @@ How to implement integration tests for services?
 2) Add test cases
 	- ArticlesITCase (including DB setup + teardown, and property files)
 			
+    Note that you have to rename the property files:
+        test/resources/client.properties.template => client.properties
+        test/resources/jdbc.properties.template => jdbc.properties
+
 
 How to run the integration test from the command line?
 -------------------------------------------------------------------------------
