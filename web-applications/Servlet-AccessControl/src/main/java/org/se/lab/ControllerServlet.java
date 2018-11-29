@@ -12,25 +12,27 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
-@WebServlet("/logout")
+@WebServlet("/public/logout")
 public class ControllerServlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	private final Logger LOG = Logger.getLogger(ControllerServlet.class); 
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException
 	{
-		LOG.debug("doGet: " + request.getQueryString());
+		LOG.info("doPost: " + request.getQueryString());
 		
 		response.setContentType("text/html");
         response.setBufferSize(1024);
       
         HttpSession session = request.getSession(false);
-        
-        LOG.info("> logout");
-        session.invalidate();
-        forward("/public/index.html", request, response);
+        if(session != null)
+		{
+			LOG.info("> logout");
+			session.invalidate();
+			forward("/public/index.html", request, response);
+		}
 	}
 
 	 protected void forward(String page, HttpServletRequest request, HttpServletResponse response)
