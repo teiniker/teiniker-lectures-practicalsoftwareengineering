@@ -54,8 +54,7 @@ public abstract class DAOImplTemplate<E>
 	@Override
 	public List<E> findAll()
 	{
-		final String hql = "SELECT u FROM " + getEntityClass().getName() 
-			+ " AS u";	    
+		final String hql = "SELECT u FROM " + getEntityClass().getName() + " AS u";
 	    return em.createQuery(hql).getResultList();
 	}
 }
