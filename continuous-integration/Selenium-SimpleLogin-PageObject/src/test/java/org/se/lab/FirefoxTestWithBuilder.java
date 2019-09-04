@@ -56,7 +56,8 @@ public class FirefoxTestWithBuilder
                 .password("student")
                 .asUser()
                 .build();
-
+        // TODO: Builder with default values, e.g. role only
+        
         // exercise
         WelcomePage welcome = page.login();
 
