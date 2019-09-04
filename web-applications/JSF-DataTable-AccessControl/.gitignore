@@ -1,0 +1,6 @@
+/target/
+/.settings/
+/home/
+/.classpath
+/.project
+/JSF-DataTable.iml
