@@ -37,7 +37,7 @@ public class UserDAOImpl
 
     public User findById(long id)
     {
-		LOG.info("findMyId(" + id + ")");
+		LOG.info("findById(" + id + ")");
 		
 		return new User("homer");
     }
