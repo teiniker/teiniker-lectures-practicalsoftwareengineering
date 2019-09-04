@@ -23,7 +23,7 @@
 		JavaNCSS
 	-->
 	
-	<property name="javancss.lib" location="vendor/javancss-32.53/lib" />
+	<property name="javancss.lib" location="${javancss.home}/lib" />
 
 	<path id="javancss.classpath">
         <fileset dir="${javancss.lib}">
