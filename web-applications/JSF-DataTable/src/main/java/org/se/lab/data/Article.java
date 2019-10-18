@@ -69,17 +69,21 @@ public class Article implements Serializable
 		this.price = price;
 	}
 
-	
+
 	/*
 	 * Object methods
 	 */
+
 	@Override
 	public String toString()
 	{
-		return getId() + "," + getDescription() + "," + getPrice();
+		return "Article{" +
+				"id=" + id +
+				", description='" + description + '\'' +
+				", price=" + price +
+				'}';
 	}
-		
-	
+
 	@Override
 	public int hashCode()
 	{
