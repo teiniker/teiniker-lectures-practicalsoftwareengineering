@@ -25,6 +25,8 @@ How to start the Web application from the command line?
 $ cd JSF-DataTable
 $ mvn wildfly:run
 
+Tipp: Make sure you have configured the MySqlDS withn Wildfly!
+
 
 How to access the Web application?
 -------------------------------------------------------------------------------
