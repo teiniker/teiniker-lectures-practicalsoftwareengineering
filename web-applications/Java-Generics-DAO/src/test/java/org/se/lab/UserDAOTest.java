@@ -22,13 +22,13 @@ public class UserDAOTest
 	@BeforeClass
 	public static void init()
 	{
-		JDBC_HELPER.executeSqlScript("sql/createUserTable.sql");
+		JDBC_HELPER.executeSqlScript("src/test/resources/sql/createUserTable.sql");
 	}
 	
 	@AfterClass
 	public static void destroy()
 	{
-		JDBC_HELPER.executeSqlScript("sql/dropUserTable.sql");		
+		JDBC_HELPER.executeSqlScript("src/test/resources/sql/dropUserTable.sql");
 	}
     
 	
