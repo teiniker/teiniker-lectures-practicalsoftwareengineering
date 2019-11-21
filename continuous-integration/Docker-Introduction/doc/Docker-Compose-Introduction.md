@@ -72,4 +72,4 @@ following commands:
 * [Overview of Docker Compose](https://docs.docker.com/compose/)
 * Jeff Nickoloff. **Docker in Action**. Manning, 2016 
 
-*Egon Teiniker, 2019, GPL v3.0*
+*Egon Teiniker, 2019, GPL v3.0 (based on examples from Practical Software Engineering - SWD17)*
