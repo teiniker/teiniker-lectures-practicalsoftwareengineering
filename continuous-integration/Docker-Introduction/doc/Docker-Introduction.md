@@ -234,4 +234,4 @@ The benefit is that common layers need to be installed only once.
 * [Docker Homepage](https://www.docker.com/)
 * Jeff Nickoloff. **Docker in Action**. Manning, 2016 
 
-*Egon Teiniker, 2019, GPL v3.0*
+*Egon Teiniker, 2019, GPL v3.0 (based on examples from Practical Software Engineering - SWD17)*
