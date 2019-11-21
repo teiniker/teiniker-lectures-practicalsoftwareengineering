@@ -169,7 +169,6 @@ The benefit is that common layers need to be installed only once.
 ## References
 
 * [Docker Homepage](https://www.docker.com/)
-* [Overview of Docker Compose](https://docs.docker.com/compose/)
 * Jeff Nickoloff. **Docker in Action**. Manning, 2016 
 
 *Egon Teiniker, 2019, GPL v3.0*
