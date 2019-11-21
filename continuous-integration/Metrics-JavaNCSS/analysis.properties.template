@@ -5,6 +5,7 @@ analysis.reports = target/reports
 
 
 # JavaNCSS settings
+javancss.home=./vendor/javancss-32.53
 javancss.output.format = plain
 javancss.output.file = ${analysis.reports}/javancss-report.txt
 #javancss.output.format = xml
