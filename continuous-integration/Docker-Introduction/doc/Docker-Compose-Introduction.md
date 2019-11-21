@@ -65,6 +65,8 @@ following commands:
 # docker-compose start      Start services
 
 # docker-compose rm         Remove stopped containers
+
+# docker-compose down       Stop all containers and remove them
 ```
 
 ## References
