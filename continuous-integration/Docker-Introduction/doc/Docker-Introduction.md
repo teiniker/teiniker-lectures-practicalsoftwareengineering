@@ -29,9 +29,9 @@ Docker provides a set of infrastructure components that simplify distributing Do
 
 ## Using Docker
 
-Note that Docker runs as the root user on our system.
+Note that Docker runs as the root user on our system ([Virtual Lab](https://drive.google.com/drive/folders/1AzsF4Mvh1HJ8k6OW5W5hQ5CF0HdqA51l)).
 ```
-# su
+$ su
 
 # systemctl start docker
 # systemctl stop docker
@@ -92,24 +92,63 @@ Commands:
   tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
 ```
 
-### Example: Database
-See: [DockerHub](https://hub.docker.com/_/mariadb)
-```
-	# docker container run -d -p 3306:3306 --name db  --env="MYSQL_ROOT_PASSWORD=root66" mariadb
-
-	# docker container inspect db
-	...
-	"IPAddress": "172.17.0.2"
-	...
-
-	# mysql -uroot -proot66 -h 172.17.0.2
-```
-
 Docker provides a mechanism for a user to inject environment variables into a new container.
 The --env flag or -e for short can be used to inject any environment variable.
 
 ### Example: Wildfly
 See: [DockerHub](https://hub.docker.com/r/jboss/wildfly)
+```
+# docker container run jboss/wildfly
+
+The *run* command downloads the needed image from DockerHub (and all its dependencies) and starts a container running
+the Wildfly application server.
+
+# docker container ls -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+e25fd561accc        jboss/wildfly       "/opt/jboss/wildfly/…"   2 minutes ago       Up 2 minutes        8080/tcp            gracious_bassi
+
+# docker image ls
+REPOSITORY                               TAG                 IMAGE ID            CREATED             SIZE
+jboss/wildfly                            latest              e6f71554a543        3 days ago          757MB
+```
+
+After starting Wildfly, we can access the application server using a Browser:
+```
+URL: http://localhost:8080/
+```
+
+We can manage the container using the *start* and *stop* commands.
+```
+# docker container stop e25fd561accc
+e25fd561accc
+
+# docker container ls -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
+e25fd561accc        jboss/wildfly       "/opt/jboss/wildfly/…"   5 minutes ago       Exited (0) 5 seconds ago                       gracious_bassi
+
+# docker container start e25fd561accc
+
+# ps -ax
+27753 ?        Sl     0:00 containerd-shim -namespace moby -workdir /var/lib/containerd/io.containerd.runtime.v1.linux/moby/5f1f3d2d445a199a6c5b7f79fef50a7c8b40dc32e9060a84442c515f3f3e5a26 -
+27772 ?        Ss     0:00 /bin/sh /opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0
+27889 ?        Sl     0:09 /usr/lib/jvm/java/bin/java -D[Standalone] -server -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.
+27998 pts/3    R+     0:00 ps -ax
+```
+Note that the Wildfly container is running as a process in our Linux system.
+
+
+### Example: Database
+See: [DockerHub](https://hub.docker.com/_/mariadb)
+```
+# docker container run -d -p 3306:3306 --name db  --env="MYSQL_ROOT_PASSWORD=root66" mariadb
+
+# docker container inspect db
+...
+"IPAddress": "172.17.0.2"
+...
+
+# mysql -uroot -proot66 -h 172.17.0.2
+```
 
 
 ## Software Installation
@@ -144,8 +183,32 @@ These files are distributed along with software that the author wants to be put 
 A common pattern is to distribute a Dockerfile with software from common version-control systems like Git.
 
 ```
-# docker build -t repository dockerfile
+# docker build -t repository Dockerfile
 ```
+
+### Example: Wildfly
+
+Given the following directory:
+```
+wildfly
+├── com
+│   └── mysql
+│       └── main
+│           ├── module.xml
+│           └── mysql-connector-java-5.1.24-bin.jar
+├── Dockerfile
+└── standalone.xml
+```
+The following *Dockerfile* configures the original *jboss/wildfly* image to add an *admin* user, add the *JDBC module*, 
+and override the *standalone.xml* file.
+```
+FROM jboss/wildfly
+RUN /opt/jboss/wildfly/bin/add-user.sh admin root66 --silent
+COPY ./com/ /opt/jboss/wildfly/modules/com/
+COPY standalone.xml /opt/jboss/wildfly/standalone/configuration/standalone.xml
+CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
+```
+
 
 ## Image Layers
 
