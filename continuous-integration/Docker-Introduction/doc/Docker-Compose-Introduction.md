@@ -11,8 +11,8 @@ interactions.
 
 Given the following directory tree:
 ```
+docker-compose.yml
 docker
-├── docker-compose.yml
 └── wildfly
     ├── com
     │   └── mysql
